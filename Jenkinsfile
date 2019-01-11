@@ -23,7 +23,7 @@ node {
         }
     }
     stage('deliver') {
-        sh "docker run -it -ip 49002:8081 -d image1-helloworld:latest"
+        sh "docker run -it -ip 49002:8081 -d image1-helloworld:${env.BUILD_NUMBER}"
     } 
    
 }
