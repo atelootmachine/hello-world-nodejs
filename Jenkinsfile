@@ -22,6 +22,8 @@ node {
             sh 'echo "Tests passed"'
         }
     }
- 
+    stage('deliver') {
+        sh "sudo docker run -it -ip 49002:8081 -d image1-helloworld:${env.BUILD_NUMBER}"
+    } 
    
 }
